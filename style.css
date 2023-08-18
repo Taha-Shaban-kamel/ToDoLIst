@@ -1,0 +1,118 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  border-style: solid;
+  font: inherit;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  background-color: hsl(0 0% 10%);
+}
+
+body.super-center {
+  min-height: 100vh;
+}
+
+.super-center {
+  display: grid;
+  place-items: center;
+}
+
+main {
+  display: grid;
+  gap: 1rem;
+
+  padding: 1.5rem;
+  border: 1px solid whitesmoke;
+  border-radius: 1rem;
+  background-color: hsl(0 0% 15%);
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  gap: 1rem;
+}
+
+form :is(input, button) {
+  padding: 0.5em 1em;
+  border: none;
+}
+
+form input {
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+form input[type="date"] {
+  width: 6.5rem;
+}
+
+form button {
+  border-radius: 100vmax;
+  background-color: darkgreen;
+
+  font-weight: 500;
+  font-size: large;
+}
+
+table#items {
+  border-collapse: collapse;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+/* won't work in Firefox yet */
+table#items:has(> tbody:empty) {
+  display: none;
+}
+
+table#items :is(th, td) {
+  padding: 0.4rem 1rem;
+}
+
+table#items th {
+  padding-block: 0.8rem;
+  border-bottom: 1px solid whitesmoke;
+}
+
+table#items th:nth-child(2) {
+  text-align: left;
+}
+
+table#items :is(thead tr, tbody tr:nth-child(even)) {
+  background-color: hsl(0 0% 20%);
+}
+
+table#items tbody td:is(:first-child, :last-child) {
+  text-align: right;
+}
+
+table#items tbody td:nth-child(3) {
+  text-align: center;
+}
+
+table#items tbody button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 100vmax;
+  background-color: darkred;
+}
+
+table#items tbody button:hover {
+  scale: 1.1;
+}
